@@ -152,12 +152,6 @@ void BFS(Graph *graph, int v)
 {
 	queue<int> q;
 	graph->visited[v] = true;
-	int *l = new int[v];
-	for (int i = 0; i < v; i++)
-	{
-		l[i] = 0x3f3f3f3f;
-	}
-	l[0] = 0;
 	q.push(v);
 	int i,j;
 	while (!q.empty())
@@ -170,13 +164,11 @@ void BFS(Graph *graph, int v)
 			if (graph->visited[j] == false)
 			{
 				graph->visited[j] = true;
-				l[j] = l[i] + 1;
 				q.push(j);
 				cout << j << "结点入队" << endl;
 			}
 		}
 	}
-	cout << l[7];
 }
 
 int main()
