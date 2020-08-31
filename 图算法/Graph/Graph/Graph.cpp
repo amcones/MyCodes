@@ -75,7 +75,7 @@ void Insert(Graph *graph, int v, int w)//插入边，v是起点w是终点
 		newNode1 = new GNode;
 		newNode1->v = w;
 		newNode1->next = graph->adj[v].next;//将起点的后继变成插入边的终点的后继
-		if (graph->digraph = false && v != w)//处理无向图
+		if (graph->digraph == false && v != w)//处理无向图
 		{
 			newNode2 = new GNode;
 			newNode2->v = v;
